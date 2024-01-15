@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .profile {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .username {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .followers {
+    color: #555;
+  }
+
+  .bio {
+    margin-top: 10px;
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .joined {
+    margin-top: 10px;
+    color: #888;
+  }
+
+  .repositories {
+    margin-top: 20px;
+    color: #555;
+  }
