@@ -1,2 +1,2 @@
 # Farica☆Kimora
-Host files
+Host files for Farica☆Kimora
