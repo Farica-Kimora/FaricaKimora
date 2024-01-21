@@ -1,61 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farica☆Kimora's Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-</head>
+  --background-color: #ffc0cb;
+  --header-background: #e5acb6;
+  --text-color: #332628;
+  --container-background: #b2868e;
+  --container-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --section-background: #997379;
+  --section-border-radius: 8px;
+  --grid-border: thin solid #7f6065;
+  --link-background: #664c51;
+  --link-hover-background: #4c393c;
+  --footer-background: #e5acb6;
+}
 
-<body>
+body {
+  font-family: Futura, sans-serif;
+  font-weight: lighter;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
 
-  <header>
-    <h1>Farica☆Kimora</h1>
-  </header>
+header {
+  background-color: var(--header-background);
+  color: var(--text-color);
+  text-align: center;
+  padding: 10px;
+}
 
-  <div class="container">
-    <section class="bio">
-      <h2>About Me</h2>
-      <p>Welcome to my portfolio! I'm Farica Kimora, an actress passionate about bringing stories to life through
-        captivating performances. Explore my work and journey in the world of acting.</p>
-    </section>
+.container {
+  background-color: var(--container-background);
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 65%;
+  text-align: center;
+  box-shadow: var(--container-box-shadow);
+}
 
-    <section class="social-links">
-      <h2>Connect with Me</h2>
-      <a href="https://github.com/farica.kimora" target="_blank">GitHub</a>
-      <a href="https://www.instagram.com/farica.kimora/" target="_blank">Instagram</a>
-      <!-- Add more social links as needed -->
-    </section>
+.bio,
+.social-links,
+.photo-gallery,
+.projects {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--section-background);
+  border-radius: var(--section-border-radius);
+  box-shadow: var(--container-box-shadow);
+}
 
-    <section class="photo-gallery">
-      <h2>Photo Gallery</h2>
-      <div class="grid-container">
-        <div class="grid">
-          <div class="grid-item">
-            <img src="images/image00.jpg" alt="Photo 1" class="img">
-          </div>
-          <div class="grid-item">
-            <img src="images/image00.png" alt="Photo 2" class="img">
-          </div>
-        </div>
-      </div>
-    </section>
+h2 {
+  color: var(--text-color);
+}
 
-    <section class="projects">
-      <h2>Acting Projects</h2>
-      <div class="project">
-        <h3>Araknia</h3>
-        <p>Check out my latest project, Araknia!</p>
-        <a href="https://cursed-entertainment.itch.io/araknia" target="_blank">Explore Araknia</a>
-      </div>
-    </section>
-  </div>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
 
-  <footer>
-    <p>&copy; 2024 Farica Kimora. All rights reserved.</p>
-  </footer>
+.grid-item {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-</body>
+.grid-item img {
+  border: var(--grid-border);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
-</html>
+.project a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--link-background);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.project a:hover {
+  background-color: var(--link-hover-background);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--footer-background);
+  color: var(--text-color);
+  /* position: fixed; Remove this line */
+  bottom: 0;
+  width: 100%;
+}
