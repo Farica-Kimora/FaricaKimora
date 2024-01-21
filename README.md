@@ -1,2 +1,2 @@
-# FaricaKimora
+# Farica☆Kimora
 Host files
