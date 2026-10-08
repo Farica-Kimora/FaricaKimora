@@ -1,48 +1,36 @@
-async function loadImageAsync(imageName, extensions) {
-  for (const extension of extensions) {
-    const imageSrc = `images/${imageName}.${extension}`;
+// Builds the photo grid from images/FK (1..41).jpg, with a staggered reveal.
+(function () {
+  const container = document.getElementById("imageContainer");
+  if (!container) return;
+  const COUNT = 41;
 
-    try {
-      await new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = imageSrc;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
+  function makeItem(src, index) {
+    const item = document.createElement("div");
+    item.className = "grid-item";
 
-      return imageSrc; 
-    } catch (error) {
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.alt = "Farica Kimora — frame " + index;
+    img.src = src;
+    img.dataset.full = src;
 
-    }
+    item.appendChild(img);
+    item.addEventListener("click", () => window.__openLightbox && window.__openLightbox(src));
+
+    img.addEventListener("load", () => {
+      // stagger the fade-in a touch so the grid cascades in
+      setTimeout(() => item.classList.add("shown"), (index % 12) * 40);
+    });
+    img.addEventListener("error", () => item.remove());
+    return item;
   }
-  return null; 
-}
 
-async function loadImages() {
-  for (let i = 1; i <= 41; i++) {
-    const scaleFadeDiv = document.createElement("div");
-    scaleFadeDiv.className = "scale-fade";
-
-    const gridItemDiv = document.createElement("div");
-    gridItemDiv.className = "grid-item";
-
-    const imgTag = document.createElement("img");
-
-    const imageName = `FK (${i})`;
-    const supportedExtensions = ["jpg", "png"];
-
-    const imageSrc = await loadImageAsync(imageName, supportedExtensions);
-
-    if (imageSrc) {
-      imgTag.alt = `FK${i}`;
-      imgTag.className = "img";
-      imgTag.src = imageSrc;
-
-      gridItemDiv.appendChild(imgTag);
-      scaleFadeDiv.appendChild(gridItemDiv);
-      document.getElementById("imageContainer").appendChild(scaleFadeDiv);
-    }
+  for (let i = 1; i <= COUNT; i++) {
+    const src = "images/FK (" + i + ").jpg";
+    container.appendChild(makeItem(src, i));
   }
-}
 
-loadImages();
+  // expose current gallery srcs for the lightbox prev/next
+  window.__gallerySrcs = () =>
+    Array.from(container.querySelectorAll("img")).map((im) => im.dataset.full);
+})();

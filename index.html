@@ -4,55 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farica☆Kimora's Portfolio</title>
+  <title>Farica ☆ Kimora — Actress</title>
+  <meta name="description" content="Farica Kimora — actress, artist and performer. Reel, gallery and projects.">
+  <meta property="og:title" content="Farica ☆ Kimora">
+  <meta property="og:description" content="Actress · Artist · Performer">
+  <meta property="og:image" content="assets/hero-poster.jpg">
+  <link rel="icon" href="assets/butterfly.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>Farica☆Kimora</h1>
-  </header>
-
-  <div class="container">
-    <section class="bio">
-      <h2>About Me</h2>
-      <p>Welcome to my portfolio! I'm Farica Kimora, an actress passionate about bringing stories to life through
-        captivating performances. Explore my work and journey in the world of acting.</p>
-    </section>
-
-    <section class="social-links">
-      <h2>Connect with Me</h2>
-      <a href="https://github.com/farica.kimora" target="_blank">GitHub</a>
-      <a href="https://www.instagram.com/farica.kimora/" target="_blank">Instagram</a>
-      <!-- Add more social links as needed -->
-    </section>
-
-    <section class="photo-gallery">
-      <h2>Photo Gallery</h2>
-      <div class="grid_container">
-        <div class="grid" id="imageContainer"></div>
-        <script src="scripts/populate-grid.js"></script>
-      </div>
-    </section>
-
-    <section class="projects">
-      <h2>Acting Projects</h2>
-      <div class="project">
-        <h3>Araknia</h3>
-        <p>Check out my latest project, Araknia!</p>
-        <a href="https://cursed-entertainment.itch.io/araknia" target="_blank">Explore Araknia</a>
-      </div>
-      <!-- Add more projects as needed -->
-    </section>
-    <a href="https://cursedprograms.github.io/cursedentertainment/pages/artists/farica/farica-music.html" target="_blank">Farica☆Kimora on Cursed Entertainment</a>
-   
+  <!-- floating butterflies -->
+  <div class="flutter" aria-hidden="true">
+    <img src="assets/butterfly.png" alt="" class="bfly b1">
+    <img src="assets/butterfly.png" alt="" class="bfly b2">
+    <img src="assets/butterfly.png" alt="" class="bfly b3">
   </div>
 
+  <nav id="nav">
+    <a class="brand" href="#top">Farica <span>☆</span> Kimora</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#reel">Reel</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#work">Work</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-veil"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Actress &middot; Artist &middot; Performer</p>
+      <h1 class="hero-name">Farica<span class="star">☆</span>Kimora</h1>
+      <p class="hero-tag">Bringing stories to life, one frame at a time.</p>
+      <a class="cta" href="#reel">Watch the reel</a>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll down">↓</a>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="about reveal">
+      <div class="about-portrait">
+        <img src="assets/portrait-wall.jpg" alt="Farica Kimora portrait" loading="lazy">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm <strong>Farica Kimora</strong> — an actress with a love for stories that linger.
+          From the first table read to the final take, I chase the honest moment: the glance,
+          the breath, the line that lands. Explore my reel, my looks, and the worlds I've
+          stepped into.</p>
+        <div class="stats">
+          <div><span>41</span><small>shoots</small></div>
+          <div><span>10+</span><small>looks</small></div>
+          <div><span>∞</span><small>range</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REEL -->
+    <section id="reel" class="reel reveal">
+      <h2>The Reel</h2>
+      <div class="reel-frame">
+        <video controls preload="none" poster="assets/reel-poster.jpg">
+          <source src="assets/reel.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery reveal">
+      <h2>Gallery</h2>
+      <p class="section-sub">Tap any frame to view full size.</p>
+      <div class="grid" id="imageContainer"></div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work reveal">
+      <h2>Selected Work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Araknia</h3>
+          <p>A dark, atmospheric title from Cursed Entertainment — my latest project.</p>
+          <a href="https://cursed-entertainment.itch.io/araknia" target="_blank" rel="noopener">Explore Araknia →</a>
+        </article>
+        <article class="card">
+          <h3>Farica ☆ Kimora — Music</h3>
+          <p>My artist page and music over on Cursed Entertainment.</p>
+          <a href="https://cursedprograms.github.io/cursedentertainment/pages/artists/farica/farica-music.html" target="_blank" rel="noopener">Listen →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect" class="connect reveal">
+      <h2>Connect with Me</h2>
+      <div class="socials">
+        <a href="https://www.instagram.com/farica.kimora/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://github.com/Farica-Kimora" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2024 Farica Kimora. All rights reserved.</p>
+    <img src="assets/butterfly.png" alt="" class="foot-bfly">
+    <p>&copy; <span id="year"></span> Farica Kimora. All rights reserved.</p>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-next" aria-label="Next">›</button>
+  </div>
+
+  <script src="scripts/populate-grid.js"></script>
+  <script src="scripts/site.js"></script>
 </body>
 
 </html>
