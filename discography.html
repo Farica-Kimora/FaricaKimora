@@ -7,7 +7,7 @@
   <title>Farica ☆ Kimora — Discography</title>
   <meta name="description" content="Farica Kimora — singles and releases, with lyrics, videos and SoundCloud.">
   <meta property="og:title" content="Farica ☆ Kimora — Discography">
-  <meta property="og:description" content="Slut Life · Quema mi Corazón">
+  <meta property="og:description" content="Quema mi Corazón · Bésame Esta Noche · Lord of Flies · That Zany Fling · singles">
   <meta property="og:image" content="assets/hero-poster.jpg">
   <link rel="icon" href="assets/butterfly.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,52 +37,150 @@
     </div>
   </nav>
 
-  <main>
-    <section class="disco-head">
+  <!-- HERO: About You! loop with the album art sliding over it -->
+  <header class="disco-hero">
+    <img class="disco-hero-bg" src="assets/about-you-hero.gif" alt="">
+    <div class="hero-veil"></div>
+    <div class="disco-hero-inner">
       <p class="eyebrow">Music</p>
-      <h2>Discography</h2>
-      <p class="section-sub">Every release, with its video, lyrics and SoundCloud.</p>
-    </section>
+      <h1 class="hero-name">Discography</h1>
+      <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Albums and singles">
+        <button class="car-prev" aria-label="Previous">‹</button>
+        <div class="car-track">
+          <a class="car-item" href="#quema-mi-corazon"><img src="assets/albums/quema-mi-corazon.jpg" alt="Quema mi Corazón"></a>
+          <a class="car-item" href="#besame-esta-noche"><img src="assets/albums/besame-esta-noche.jpg" alt="Bésame Esta Noche"></a>
+          <a class="car-item" href="#lord-of-flies"><img src="assets/albums/lord-of-flies.jpg" alt="Lord of Flies"></a>
+          <a class="car-item" href="#that-zany-fling"><img src="assets/albums/that-zany-fling.jpg" alt="That Zany Fling"></a>
+          <a class="car-item" href="#singles"><img src="assets/albums/edge-of-the-skyline.jpg" alt="Edge of the Skyline"></a>
+          <a class="car-item" href="#singles"><img src="assets/albums/slut-life.jpg" alt="Slut Life"></a>
+          <a class="car-item" href="#singles"><img src="assets/albums/sloppy-second-hand-sex.jpg" alt="Sloppy Second-hand Sex"></a>
+          <a class="car-item" href="#singles"><img src="assets/albums/slut.jpg" alt="Slut"></a>
+        </div>
+        <button class="car-next" aria-label="Next">›</button>
+        <p class="car-caption" id="carCaption" aria-live="polite"></p>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#quema-mi-corazon" aria-label="Scroll down">↓</a>
+  </header>
 
-    <!-- QUEMA MI CORAZÓN -->
-    <section class="release reveal">
-      <a class="release-cover" href="https://www.youtube.com/watch?v=z-FK2HdZ2Cc" target="_blank" rel="noopener">
-        <img src="https://i.ytimg.com/vi/z-FK2HdZ2Cc/hqdefault.jpg" alt="Quema mi Corazón — music video" loading="lazy">
-        <span class="play" aria-hidden="true">▶</span>
-      </a>
+  <main>
+    <h2 class="disco-group" id="albums">Albums</h2>
+
+    <section class="release reveal" id="quema-mi-corazon">
+      <div class="release-cover"><img src="assets/albums/quema-mi-corazon.jpg" alt="Quema mi Corazón — cover" loading="lazy"></div>
       <div class="release-info">
-        <p class="eyebrow">Two-part release · Spanish</p>
+        <p class="eyebrow">Album · Spanish</p>
         <h3>Quema mi Corazón</h3>
         <ol class="tracks">
-          <li><span>Recuerdos en llamas</span><small>Parte Uno</small></li>
-          <li><span>Tiempo De Volar</span><small>Parte Dos</small></li>
+          <li data-src="assets/music/quema-mi-corazon/01.Recuerdos en llamas.mp3"><span>Recuerdos en llamas</span><small>Parte Uno</small></li>
+          <li data-src="assets/music/quema-mi-corazon/02.Tiempo de Volar.mp3"><span>Tiempo de Volar</span><small>Parte Dos</small></li>
+          <li data-src="assets/music/quema-mi-corazon/03.Quemalo Todo.mp3"><span>Quémalo Todo</span></li>
         </ol>
         <div class="release-links">
           <a href="https://www.youtube.com/watch?v=z-FK2HdZ2Cc" target="_blank" rel="noopener">YouTube</a>
           <a href="https://soundcloud.com/farica-kimora/sets/quema-mi-corazon" target="_blank" rel="noopener">SoundCloud</a>
+        </div>
+        <div class="video-frame">
+          <iframe title="Quema mi Corazón — Farica Kimora" loading="lazy"
+            src="https://www.youtube-nocookie.com/embed/z-FK2HdZ2Cc?rel=0&amp;playsinline=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <iframe class="sc" title="Quema mi Corazón on SoundCloud" loading="lazy"
           src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/farica-kimora/sets/quema-mi-corazon&amp;color=%23e7c98f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe>
       </div>
     </section>
 
-    <!-- SLUT LIFE -->
-    <section class="release reveal">
-      <a class="release-cover art" href="https://farica-kimora-slut-life.netlify.app/" target="_blank" rel="noopener">
-        <img src="assets/covers/slut-life.png" alt="Slut Life" loading="lazy">
-      </a>
+    <section class="release reveal" id="besame-esta-noche">
+      <div class="release-cover"><img src="assets/albums/besame-esta-noche.jpg" alt="Bésame Esta Noche — cover" loading="lazy"></div>
       <div class="release-info">
-        <p class="eyebrow">Single · Explicit</p>
-        <h3>Slut Life</h3>
+        <p class="eyebrow">Album</p>
+        <h3>Bésame Esta Noche</h3>
         <ol class="tracks">
-          <li><span>Slut Life</span></li>
+          <li data-src="assets/music/besame-esta-noche/01.Besame Esta Noche.mp3"><span>Bésame Esta Noche</span></li>
+          <li data-src="assets/music/besame-esta-noche/02.Reckless Abandon.mp3"><span>Reckless Abandon</span></li>
+          <li data-src="assets/music/besame-esta-noche/03.Resuelto.mp3"><span>Resuelto</span></li>
+          <li data-src="assets/music/besame-esta-noche/04.Woman With A Cause.mp3"><span>Woman With A Cause</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="release reveal" id="lord-of-flies">
+      <div class="release-cover"><img src="assets/albums/lord-of-flies.jpg" alt="Lord of Flies — cover" loading="lazy"></div>
+      <div class="release-info">
+        <p class="eyebrow">Album · Punk · Explicit</p>
+        <h3>Lord of Flies</h3>
+        <ol class="tracks">
+          <li data-src="assets/music/lord-of-flies/01.Lord of Flies Intro.mp3"><span>Lord of Flies</span><small>Intro</small></li>
+          <li data-src="assets/music/lord-of-flies/02.Lord of Flies.mp3"><span>Lord of Flies</span></li>
+          <li data-src="assets/music/lord-of-flies/03.Fuck The Police.mp3"><span>Fuck The Police</span></li>
+          <li data-src="assets/music/lord-of-flies/04.Holy Hymns Punk Version.mp3"><span>Holy Hymns</span><small>Punk Version</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="release reveal" id="that-zany-fling">
+      <div class="release-cover"><img src="assets/albums/that-zany-fling.jpg" alt="That Zany Fling — cover" loading="lazy"></div>
+      <div class="release-info">
+        <p class="eyebrow">Album</p>
+        <h3>That Zany Fling</h3>
+        <ol class="tracks">
+          <li data-src="assets/music/that-zany-fling/01.1955.mp3"><span>1955</span></li>
+          <li data-src="assets/music/that-zany-fling/02.About You.mp3"><span>About You!</span></li>
+          <li data-src="assets/music/that-zany-fling/03.Attack the Anxiety.mp3"><span>Attack the Anxiety</span></li>
+          <li data-src="assets/music/that-zany-fling/04.Cool Cat Town.mp3"><span>Cool Cat Town</span></li>
+          <li data-src="assets/music/that-zany-fling/05.Hands Jivin High.mp3"><span>Hands Jivin' High</span></li>
+          <li data-src="assets/music/that-zany-fling/06.Holy Hymns.mp3"><span>Holy Hymns</span></li>
+          <li data-src="assets/music/that-zany-fling/07.Pestiferous Beings.mp3"><span>Pestiferous Beings</span></li>
+          <li data-src="assets/music/that-zany-fling/08.Turn And Burn.mp3"><span>Turn And Burn</span></li>
+          <li data-src="assets/music/that-zany-fling/09.Vinyl Discord.mp3"><span>Vinyl Discord</span></li>
+          <li data-src="assets/music/that-zany-fling/10.When I Am Feeling Blue.mp3"><span>When I Am Feeling Blue</span></li>
+          <li data-src="assets/music/that-zany-fling/11.About You Extended.mp3"><span>About You!</span><small>Extended</small></li>
         </ol>
         <div class="release-links">
-          <a href="https://farica-kimora-slut-life.netlify.app/" target="_blank" rel="noopener">Video &amp; lyrics (18+)</a>
-          <a href="https://soundcloud.com/farica-kimora/slut-life" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="https://www.youtube.com/watch?v=IGds0xKVriI" target="_blank" rel="noopener">About You! — YouTube</a>
+          <a href="https://soundcloud.com/farica-kimora/about-you" target="_blank" rel="noopener">About You! — SoundCloud</a>
         </div>
-        <iframe class="sc" title="Slut Life on SoundCloud" loading="lazy"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/farica-kimora/slut-life&amp;color=%23e7c98f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe>
+        <div class="video-frame">
+          <iframe title="About You... — Farica Kimora" loading="lazy"
+            src="https://www.youtube-nocookie.com/embed/IGds0xKVriI?rel=0&amp;playsinline=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <iframe class="sc" title="About You! on SoundCloud" loading="lazy"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/farica-kimora/about-you&amp;color=%23e7c98f&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe>
+      </div>
+    </section>
+
+    <section class="singles reveal" id="singles">
+      <h2 class="disco-group">Singles</h2>
+      <div class="singles-grid">
+      <div class="single" data-src="assets/music/singles/01.Slut Life.mp3" data-title="Slut Life">
+        <button class="single-cover" type="button" aria-label="Play Slut Life"><img src="assets/albums/slut-life.jpg" alt="Slut Life — cover" loading="lazy"><span class="play" aria-hidden="true">▶</span></button>
+        <h3>Slut Life</h3>
+        <p>Single · Explicit</p>
+        <a class="single-link" href="https://farica-kimora-slut-life.netlify.app/" target="_blank" rel="noopener">Video &amp; lyrics (18+) →</a>
+      </div>
+      <div class="single" data-src="assets/music/singles/02.Slut.mp3" data-title="Slut">
+        <button class="single-cover" type="button" aria-label="Play Slut"><img src="assets/albums/slut.jpg" alt="Slut — cover" loading="lazy"><span class="play" aria-hidden="true">▶</span></button>
+        <h3>Slut</h3>
+        <p>Single · Explicit</p>
+      </div>
+      <div class="single" data-src="assets/music/singles/03.Sloppy Second-hand Sex.mp3" data-title="Sloppy Second-hand Sex">
+        <button class="single-cover" type="button" aria-label="Play Sloppy Second-hand Sex"><img src="assets/albums/sloppy-second-hand-sex.jpg" alt="Sloppy Second-hand Sex — cover" loading="lazy"><span class="play" aria-hidden="true">▶</span></button>
+        <h3>Sloppy Second-hand Sex</h3>
+        <p>Single · Explicit</p>
+      </div>
+      <div class="single" data-src="assets/music/singles/04.Edge of the Skyline.mp3" data-title="Edge of the Skyline">
+        <button class="single-cover" type="button" aria-label="Play Edge of the Skyline"><img src="assets/albums/edge-of-the-skyline.jpg" alt="Edge of the Skyline — cover" loading="lazy"><span class="play" aria-hidden="true">▶</span></button>
+        <h3>Edge of the Skyline</h3>
+        <p>Single</p>
+      </div>
+      <div class="single" data-src="assets/music/singles/05.Rumble.mp3" data-title="Rumble">
+        <button class="single-cover" type="button" aria-label="Play Rumble"><img class="placeholder" src="assets/butterfly.png" alt=""><span class="play" aria-hidden="true">▶</span></button>
+        <h3>Rumble</h3>
+        <p>Single</p>
+      </div>
       </div>
     </section>
 
@@ -95,12 +193,27 @@
     </section>
   </main>
 
+  <!-- shared audio player: tap any track or single to play -->
+  <div class="player-bar" id="playerBar" hidden>
+    <img id="pbCover" src="" alt="">
+    <div class="pb-info"><strong id="pbTitle"></strong><small id="pbAlbum"></small></div>
+    <div class="pb-controls">
+      <button id="pbPrev" aria-label="Previous track">⏮</button>
+      <button id="pbPlay" aria-label="Pause">⏸</button>
+      <button id="pbNext" aria-label="Next track">⏭</button>
+    </div>
+    <div class="pb-progress"><span id="pbTime">0:00</span><input id="pbSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek"><span id="pbDur">0:00</span></div>
+    <audio id="pbAudio" preload="none"></audio>
+  </div>
+
   <footer>
     <img src="assets/butterfly.png" alt="" class="foot-bfly">
     <p>&copy; <span id="year"></span> Farica Kimora. All rights reserved.</p>
   </footer>
 
   <script src="scripts/site.js"></script>
+  <script src="scripts/counts.js"></script>
+  <script src="scripts/discography.js"></script>
 </body>
 
 </html>

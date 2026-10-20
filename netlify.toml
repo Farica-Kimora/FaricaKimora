@@ -1,0 +1,6 @@
+# Static site; the only server code is the play/love counter in netlify/functions.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"

@@ -31,6 +31,13 @@
   }
 
   // expose current gallery srcs for the lightbox prev/next
+  // the two featured half-width photos open in the lightbox too, ahead of the grid
+  const pair = document.getElementById("featuredPair");
+  if (pair) pair.querySelectorAll(".grid-item").forEach((item) => {
+    const src = item.querySelector("img").dataset.full;
+    item.addEventListener("click", () => window.__openLightbox && window.__openLightbox(src));
+  });
+
   window.__gallerySrcs = () =>
-    Array.from(container.querySelectorAll("img")).map((im) => im.dataset.full);
+    Array.from(document.querySelectorAll("#featuredPair img, #imageContainer img")).map((im) => im.dataset.full);
 })();
