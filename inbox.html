@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Fan Mail — Inbox</title>
+  <link rel="icon" href="assets/butterfly.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* private page: read and clear fan mail (needs the FANMAIL_KEY set in Netlify) */
+    .inbox { max-width: 760px; padding-top: 60px; }
+    .inbox h2 { margin-bottom: 24px; }
+    .key-form { display: flex; gap: 10px; margin-bottom: 30px; }
+    .key-form input { flex: 1; padding: 12px 16px; border-radius: 40px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; }
+    .key-form button, .mail button { padding: 10px 22px; border-radius: 40px; border: 1px solid var(--gold); background: none; color: var(--gold); font: inherit; cursor: pointer; }
+    .status { color: var(--muted); text-align: center; }
+    .mail { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; margin-bottom: 16px; }
+    .mail header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin-bottom: 10px; }
+    .mail strong { color: var(--rose); }
+    .mail small { color: var(--muted); }
+    .mail p { white-space: pre-wrap; line-height: 1.7; margin: 0 0 14px; }
+    .mail a { color: var(--gold); }
+    .mail button { padding: 6px 16px; font-size: .8rem; border-color: var(--line); color: var(--muted); }
+    .mail button:hover { border-color: #ff4d7d; color: #ff4d7d; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="inbox">
+      <h2>Fan Mail</h2>
+      <form class="key-form" id="keyForm">
+        <input id="key" type="password" placeholder="Inbox key" autocomplete="current-password" required>
+        <button>Open</button>
+      </form>
+      <p class="status" id="status"></p>
+      <div id="list"></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const API = "/api/fanmail";
+      const KEY = "fk-inbox-key";
+      const $ = (id) => document.getElementById(id);
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      let key = "";
+      try { key = sessionStorage.getItem(KEY) || ""; } catch {}
+
+      async function load() {
+        $("status").textContent = "Loading…";
+        const res = await fetch(API, { headers: { Authorization: "Bearer " + key } }).catch(() => null);
+        if (!res || !res.ok) {
+          $("status").textContent = res && res.status === 403 ? "Wrong key." : "Couldn't reach the inbox.";
+          $("list").innerHTML = "";
+          return;
+        }
+        try { sessionStorage.setItem(KEY, key); } catch {}
+        $("keyForm").hidden = true;
+        const mail = await res.json();
+        $("status").textContent = mail.length ? `${mail.length} message${mail.length === 1 ? "" : "s"}` : "No fan mail yet.";
+        $("list").innerHTML = mail.map((m) => `
+          <article class="mail" data-id="${esc(m.id)}">
+            <header>
+              <span><strong>${esc(m.name)}</strong>${m.email ? ` · <a href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : ""}</span>
+              <small>${esc(new Date(m.at).toLocaleString())}${m.from ? " · via " + esc(m.from) : ""}</small>
+            </header>
+            <p>${esc(m.message)}</p>
+            <button type="button">Delete</button>
+          </article>`).join("");
+      }
+
+      $("keyForm").addEventListener("submit", (e) => { e.preventDefault(); key = $("key").value.trim(); load(); });
+      $("list").addEventListener("click", async (e) => {
+        const card = e.target.closest(".mail");
+        if (!card || e.target.tagName !== "BUTTON") return;
+        e.target.disabled = true;
+        const res = await fetch(API + "?id=" + encodeURIComponent(card.dataset.id), { method: "DELETE", headers: { Authorization: "Bearer " + key } }).catch(() => null);
+        if (res && res.ok) card.remove(); else e.target.disabled = false;
+      });
+      if (key) load();
+    })();
+  </script>
+</body>
+
+</html>
