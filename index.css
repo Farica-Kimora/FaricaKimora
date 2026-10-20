@@ -203,6 +203,24 @@ a.single:hover .single-cover img { transform: scale(1.05); }
 .single h3 { margin: 12px 0 2px; font-size: 1.35rem; color: var(--rose); }
 .single p { margin: 0; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: 1.5px; }
 
+/* fan mail */
+.fanmail { max-width: 760px; }
+#fmForm { display: grid; gap: 18px; }
+.fm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+#fmForm label { display: grid; gap: 8px; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: 2px; }
+#fmForm label small { text-transform: none; letter-spacing: 0; font-size: .75rem; opacity: .8; }
+#fmForm input, #fmForm textarea {
+  width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--text);
+  font: 300 1rem 'Montserrat', sans-serif; resize: vertical; transition: border-color .25s;
+}
+#fmForm input:focus, #fmForm textarea:focus { outline: none; border-color: var(--gold); }
+.fm-hp { position: absolute; left: -9999px; }
+.fm-send { display: flex; align-items: center; gap: 18px; }
+.fm-send .cta { background: none; cursor: pointer; font-family: inherit; }
+.fm-count { color: var(--muted); font-size: .8rem; }
+.fm-status { margin: 0; min-height: 1.4em; color: var(--gold); }
+.fm-status.err { color: #ff4d7d; }
+
 /* connect */
 .connect { text-align: center; }
 .socials { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
@@ -254,6 +272,7 @@ footer p { margin: 0; font-size: .82rem; letter-spacing: 1px; }
   .nav-links { display: none; }
   .release { grid-template-columns: 1fr; gap: 26px; }
   .about { grid-template-columns: 1fr; gap: 30px; }
+  .fm-row { grid-template-columns: 1fr; }
   .about-text h2, .about-text h2::after { text-align: center; }
   section { padding: 70px 6vw; }
 }

@@ -33,6 +33,7 @@
       <a href="#gallery">Gallery</a>
       <a href="discography.html">Discography</a>
       <a href="#work">Work</a>
+      <a href="#fanmail">Fan Mail</a>
       <a href="#connect">Connect</a>
     </div>
   </nav>
@@ -115,6 +116,25 @@
       </div>
     </section>
 
+    <!-- FAN MAIL -->
+    <section id="fanmail" class="fanmail reveal">
+      <h2>Fan Mail</h2>
+      <p class="section-sub">Got something to say? Write to me here. I read every one.</p>
+      <form id="fmForm" novalidate>
+        <div class="fm-row">
+          <label>Name <input name="name" maxlength="80" autocomplete="name" placeholder="Anonymous"></label>
+          <label>Email <small>optional, if you'd like a reply</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
+        </div>
+        <label>Message <textarea name="message" rows="6" maxlength="2000" required></textarea></label>
+        <label class="fm-hp" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="fm-send">
+          <button class="cta" type="submit">Send</button>
+          <span class="fm-count"><span id="fmLeft">2000</span> left</span>
+        </div>
+        <p class="fm-status" id="fmStatus" role="status"></p>
+      </form>
+    </section>
+
     <!-- CONNECT -->
     <section id="connect" class="connect reveal">
       <h2>Connect with Me</h2>
@@ -143,6 +163,7 @@
 
   <script src="scripts/populate-grid.js"></script>
   <script src="scripts/site.js"></script>
+  <script src="scripts/fanmail.js"></script>
 </body>
 
 </html>
