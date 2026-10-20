@@ -7,6 +7,7 @@
 </a>
 
 <div align="center"> <h1>Farica☆Kimora</h1>
+ <p><a href="https://faricakimora.netlify.app/">faricakimora.netlify.app</a></p>
  </div>
 <div align="center">
   <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23323330.svg?&style=for-the-badge&logo=html5&logoColor=black&color=white"/>

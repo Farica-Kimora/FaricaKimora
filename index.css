@@ -136,6 +136,31 @@ footer p { margin: 0; font-size: .82rem; letter-spacing: 1px; }
 .lb-prev { left: 10px; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 10px; top: 50%; transform: translateY(-50%); }
 
+/* ---------- intro: a swarm of butterflies covers the page, then flies off (built in site.js) ---------- */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  background: var(--bg);
+  transition: background-color 1.4s ease .5s;
+  cursor: pointer;
+}
+#intro.go { background-color: transparent; }
+#intro .bf {
+  position: absolute;
+  width: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  will-change: transform;
+}
+#intro .bf img {
+  display: block;
+  width: 100%;
+  filter: drop-shadow(0 0 8px rgba(244, 184, 198, .6));
+  animation: flap var(--flap) ease-in-out infinite alternate;
+}
+@keyframes flap { to { transform: scaleX(.25); } }
+
 /* responsive */
 @media (max-width: 760px) {
   .nav-links { display: none; }
@@ -146,6 +171,7 @@ footer p { margin: 0; font-size: .82rem; letter-spacing: 1px; }
 
 @media (prefers-reduced-motion: reduce) {
   .bfly, .scroll-cue { animation: none; }
+  #intro { display: none; }
   .reveal, .grid-item { transition: none; opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
