@@ -1,4 +1,4 @@
-// Builds the photo grid from images/FK (1..41).jpg, with a staggered reveal.
+// Builds the photo grid from images/farica-kimora-01..41.jpg, with a staggered reveal.
 (function () {
   const container = document.getElementById("imageContainer");
   if (!container) return;
@@ -26,7 +26,7 @@
   }
 
   for (let i = 1; i <= COUNT; i++) {
-    const src = "images/FK (" + i + ").jpg";
+    const src = "images/farica-kimora-" + String(i).padStart(2, "0") + ".jpg";
     container.appendChild(makeItem(src, i));
   }
 
